@@ -63,6 +63,7 @@
 
 .cuIcon-favorfill:before {
     content: "\e64b";
+    margin-right: 10rpx;
 }
 
 .cuIcon-favor:before {

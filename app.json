@@ -14,6 +14,11 @@
     "cu-custom": "/colorui/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置将...."
+    }
+  }, 
   "tabBar": {
     "color": "#333333",
     "selectedColor": "#0081ff",

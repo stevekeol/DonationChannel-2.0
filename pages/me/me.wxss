@@ -98,7 +98,6 @@
     border-radius: 20rpx;
     width: 100%;
     padding: 0 30rpx 0 30rpx;
-    margin-bottom: 30rpx;
 }
 
 /*好好学习*/
@@ -120,4 +119,8 @@
 .tableContainer .item .value {
     opacity: 0.8;
     font-size: 0.75rem;
+}
+
+.mainColor {
+    color: #0081ff;
 }
