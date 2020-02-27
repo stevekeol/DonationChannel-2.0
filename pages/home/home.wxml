@@ -8,10 +8,10 @@
      scale='15'>
   </map>
   <view class="chooseBtn" bindtap="changeMapContent">
-    <view class="right {{!mapLevelIsLeft ? 'rightChosed': 'rightDefault'}}">需求</view>
-    <view class="left {{mapLevelIsLeft ? 'leftChosed': 'leftDefault'}}">疫情</view>
+    <view class="right {{mapLevelIsLeft ? 'rightChosed': 'rightDefault'}}">医院</view>
+    <view class="left {{!mapLevelIsLeft ? 'leftChosed': 'leftDefault'}}">个人</view>
   </view>   
-  <view class="infoLayer_1" wx:if="{{!mapLevelIsLeft}}">
+  <view class="infoLayer_1" wx:if="{{mapLevelIsLeft}}">
     <view class="totalDemands">
       <view class="title">全国医疗物资需求</view>
       <view class="items">
@@ -22,9 +22,7 @@
       </view>
     </view>
   </view>
-
-
-  <view class="infoLayer_2" wx:if="{{!mapLevelIsLeft}}">
+  <view class="infoLayer_2" wx:if="{{mapLevelIsLeft}}">
    <!--    <view class="notices">
         <view class="icon"></view>
         <view class="content">武汉协和医院物资全部用尽（30分钟前）</view>
@@ -50,4 +48,30 @@
       </view>
     </view>
   </view>
+
+  <view class="infoLayer_2" wx:if="{{!mapLevelIsLeft}}">
+    <view class="helpInfo">
+      <view class="title">紧急求助</view>
+      <view class="content">
+        <view class="nameContainer">
+          <view class="name">求助人: {{ currentPersonal.name }}</view>
+          <view class="states">
+            <view class="tag high">加急</view>
+            <view class="tag weibo">微博</view>
+          </view>
+        </view>
+        <view class="nameContainer">
+          <view class="name">电话: {{currentPersonal.contact }}</view>
+        </view>  
+        <view class="nameContainer">
+          <view class="name">求助时间: {{currentPersonal.timeOfIllness }}</view>
+        </view>                                 
+        <view class="nameContainer">
+          <view class="name">地址: {{currentPersonal.community}}</view>
+        </view>
+        <view class="desc">情况描述： {{currentPersonal.desc}} 
+        </view>        
+      </view>
+    </view>
+  </view>  
 </view>

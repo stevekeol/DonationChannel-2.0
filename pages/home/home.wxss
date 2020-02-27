@@ -234,3 +234,136 @@
   color: #0081ff;
   background-color: white;
 }
+
+
+.helpInfo {
+  width: 100%;
+  background-color: white;
+  padding: 10rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx white;
+}
+.helpInfo .title {
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+  color: #e54d42;
+  font-size: 1.1rem;
+}
+.helpInfo .title .name {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: left;
+  opacity: .8;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.helpInfo .title img {
+  width: 20rpx;
+  height: 20rpx;
+}
+.helpInfo .link {
+  width: 30rpx;
+  height: 30rpx;
+}
+.helpInfo .contact {
+  height: 120rpx;
+}
+  
+.helpInfo .contact .top{
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+.helpInfo .contact .bottom{
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: left;
+  opacity: .6;
+}
+.helpInfo .contact .top .left{
+  flex: 3;
+  height: 80rpx;
+}
+.helpInfo .contact .top .right{
+  flex: 1;
+  height: 40rpx;
+  color: white;
+  background-color: #0081ff;
+  padding: 0 5rpx 0 5rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.helpInfo .contact .top .left .name{
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: left;
+  opacity: .6;
+}
+.helpInfo .contact .top .left .phone{
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: left;
+}
+.helpInfo .contact .top .left .phone .phoneTitle{
+  opacity: 0.6;
+}
+.helpInfo .contact .top .left .phone .phoneNumber{
+  color: #0081ff;
+  opacity: 1;
+  font-weight: bold;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;  
+}
+.helpInfo .contact .bottom {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap; 
+}
+.helpInfo .content {
+  opacity: 0.6;
+}
+.nameContainer {
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.nameContainer .name {
+  flex: none;
+}
+.nameContainer .states {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nameContainer .states .tag {
+  width: 100rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  color: white;
+  font-size: 0.7rem;
+  margin-right: 5rpx;
+}
+.high {
+  background-color: #e54d42;
+}
+.weibo {
+  background-color: #f29703;
+}
+.source {
+  background-color: #1cbbb4;
+}
+.helpInfo .content .desc {
+  margin-top: 5rpx;
+  padding-top: 5rpx;
+  border-top: solid 1rpx rgba(0, 0, 0, 0.3);
+}

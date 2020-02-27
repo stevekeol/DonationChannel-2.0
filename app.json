@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/publishDemand/publishDemand",
     "pages/home/home",
     "pages/service/service",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/myCare/myCare",
+    "pages/myHelp/myHelp"
   ],
   "window": {
     "navigationStyle": "custom",
@@ -16,7 +19,7 @@
   "sitemapLocation": "sitemap.json",
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置将...."
+      "desc": "将为你显示周边求助信息"
     }
   }, 
   "tabBar": {

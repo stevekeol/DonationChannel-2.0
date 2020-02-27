@@ -8,18 +8,20 @@
 
 <view class="body margin-top-xl">
   <view class="title">发起求助</view>
-  <view class="memberCard">
-    <view class="memberCardInfo">
-      <view class="store"><span class="mainColor">祝融</span> • 应急求助对接平台</view>
-      <view class="number">No.10010123</view>
-    </view>
-    <view class="memberCardLevel">
-      <view class="icon">
-        <image src="../../images/memberCard/level_diamond.png"></image>
-        <view>已认证</view>
+    <navigator url="../../pages/publishDemand/publishDemand" hover-class="none">
+    <view class="memberCard">
+      <view class="memberCardInfo">
+        <view class="store"><span class="mainColor">祝融</span> • 应急求助对接平台</view>
+        <view class="number">No.10010123</view>
+      </view>
+      <view class="memberCardLevel">
+        <view class="icon">
+          <image src="../../images/memberCard/level_diamond.png"></image>
+          <view>已认证</view>
+        </view>
       </view>
     </view>
-  </view>
+    </navigator>
   <view class="title margin-top-xl">其它</view>
   <view class="tableContainer margin-top">
     <view class="item">
@@ -30,13 +32,17 @@
       <view class="name cuIcon-mobilefill">联系方式</view>
       <view class="value">15258800906</view>
     </view>    
-    <view class="item">
-      <view class="name cuIcon-timefill">求助历史</view>
+    <navigator url="../../pages/myHelp/myHelp" class="item" hover-class="none">
+      <view class="name cuIcon-timefill">
+        求助历史
+      </view>
       <view class="cuIcon-right"></view>
-    </view>
-    <view class="item">
-      <view class="name cuIcon-favorfill">持续关注</view>
+    </navigator>
+    <navigator url="../../pages/myCare/myCare" class="item" hover-class="none">
+      <view class="name cuIcon-timefill">
+        持续关注
+      </view>
       <view class="cuIcon-right"></view>
-    </view>    
+    </navigator>
   </view>
 </view>
