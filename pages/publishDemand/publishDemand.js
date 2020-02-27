@@ -2,7 +2,8 @@
 const app = getApp();
 Page({
   data: {
-    imgList: []
+    imgList: [],
+    desc: undefined
   },
   onLoad() {},
   ChooseImage() {

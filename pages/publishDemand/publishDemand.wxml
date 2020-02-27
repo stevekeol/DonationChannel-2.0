@@ -8,19 +8,19 @@
   <view class="tableContainer">
     <view class="item">
       <view class="name">姓名</view>
-      <view>王忠进</view>
+      <view>王大叔</view>
     </view>
     <view class="item">
       <view class="name">电话</view>
       <view>15258800907</view>
     </view>
   </view>
-  <view class="tableContainer">
+  <navigator class="tableContainer" url="../../pages/helpKey/helpKey" open-type="navigate">
     <view class="item">
       <view class="name">求助关键词</view>
       <view class="cuIcon-right">血浆</view>
     </view>
-  </view>
+  </navigator>
   <view class="tableContainer">
     <view class="item">
       <view class="name">年龄</view>
@@ -31,19 +31,17 @@
       <view class="cuIcon-right">2020-01-21</view>
     </view>
   </view>
-  <view class="tableContainer">
+
+  <navigator class="tableContainer" url="../../pages/helpDesc/helpDesc" open-type="navigate">
     <view class="item">
       <view class="name">详情描述</view>
       <view class="cuIcon-right"></view>
     </view>
-  </view>
+  </navigator>
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       图片上传
     </view>
-<!--     <view class="action">
-      {{imgList.length}}/4
-    </view> -->
   </view>
   <view class="cu-form-group">
     <view class="grid col-4 grid-square flex-sub">
