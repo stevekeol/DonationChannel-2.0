@@ -45,4 +45,13 @@
       <view class="cuIcon-right"></view>
     </navigator>
   </view>
+  <view class="title margin-top-xl">审核入口</view>
+  <view class="tableContainer margin-top">
+    <navigator url="../../pages/checkout/checkout" class="item" hover-class="none">
+      <view class="name cuIcon-timefill">
+        所有求助信息
+      </view>
+      <view class="cuIcon-right"></view>
+    </navigator>
+  </view>  
 </view>

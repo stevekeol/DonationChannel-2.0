@@ -50,6 +50,14 @@
   </view>
 
   <view class="infoLayer_2" wx:if="{{!mapLevelIsLeft}}">
+    <view class="entranceBtn">
+      <navigator class="btn left" url="../../pages/publishDemand/publishDemand" hover-class="none">
+        <image class="img" src="../../images/map/publishBtn.png" mode="top"></image>
+      </navigator>
+      <view class="btn right" bindtap="genPoster">
+        <image class="img" src="../../images/map/shareBtn.png" mode="top"></image>
+      </view>
+    </view>
     <view class="helpInfo">
       <view class="title">紧急求助</view>
       <view class="content">

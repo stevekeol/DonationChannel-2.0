@@ -79,7 +79,6 @@ Page({
       })      
     }
   },
-
   changeMapContent(){
     this.setData({
       markers: !this.data.mapLevelIsLeft ? hospital2marker(mockData.hospitals) : personal2marker(personnalData),
@@ -92,22 +91,6 @@ Page({
       key: 'LTSBZ-2Y7CP-VWLDA-VWFX5-DZ4TK-35FEW'
     });
   },
-  // onShow: function () {
-  //   // 调用接口
-  //   mapSDK.search({
-  //     keyword: '酒店',
-  //     success: function (res) {
-  //         console.log(res);
-  //     },
-  //     fail: function (res) {
-  //         console.log(res);
-  //     },
-  //     complete: function (res) {
-  //       console.log(res);
-  //     }
-  //   });
-  // }
-  
   //应当为获取数据后再执行这里
   onShow: function() {
     
@@ -119,5 +102,8 @@ Page({
       hospitals: mockData.hospitals,
       personalDatas: personnalData
     })
+  },
+  genPoster: function() {
+    console.log('此时生成可本地保存的海报');
   }
 })
