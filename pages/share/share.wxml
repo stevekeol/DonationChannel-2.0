@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="content">分享</view>
+  <view slot="backText">返回</view>  
+</cu-custom>
+
+<view class="share-container">
+  <view class="image-wraper">
+  <image wx:if="{{shareImage !== ''}}" src="{{shareImage}}" class="share-image"></image>
+  </view>
+  <canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>
+  <view class="button-wraper">
+  <button bind:tap="eventSave" type="warn">保存到本地</button>
+  </view>
+</view>

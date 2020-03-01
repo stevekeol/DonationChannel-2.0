@@ -1,6 +1,7 @@
 .map {
   height: 100vh;
-  z-index: -1;
+  /* 注销这里才可以移动地图 */
+  /* z-index: -1; */
 }
 .demandsMap {
   position: relative;
