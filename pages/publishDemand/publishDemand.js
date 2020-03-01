@@ -1,4 +1,5 @@
 // import { apiGetEmployees, apiGetClients } from '../../utils/api.js';
+const qiniuUploader = require("../../utils/qiniuUploader");
 const app = getApp();
 Page({
   data: {
@@ -12,17 +13,38 @@ Page({
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], //从相册选择
       success: (res) => {
-        if (this.data.imgList.length != 0) {
-          this.setData({
-            imgList: this.data.imgList.concat(res.tempFilePaths)
-          })
-        } else {
-          this.setData({
-            imgList: res.tempFilePaths
-          })
-        }
+        this.uploadImgs(res.tempFilePaths); 
       }
     });
+  },
+  fetchUptoken() {
+    return new Promise((resolve, reject) => {
+      // TODO need to be gennerated through API
+      setTimeout(
+        () => { resolve("Q0FP7bNduQF5tp7TRpuBjeHjBWAoHy33F9OwDUkc:qExcfQB-FhzVKVvnPpA-YiUcYBA=:eyJzY29wZSI6Im5jcCIsImRlYWRsaW5lIjoxNTgzMTQwOTY2fQ==")},
+        500
+      )
+    })
+  },
+  uploadImgs(filePath) {
+    filePath.map((path, i) => {
+      this.fetchUptoken().then(uptoken => {
+        qiniuUploader.upload(
+          path,
+          res => {
+            this.setData({
+              imgList: [...this.data.imgList, res.imageURL]
+            })
+          },
+          null, // ignore error
+          {
+            region: 'ECN',
+            uptoken: uptoken,
+            uploadURL: 'http://up.qiniup.com',
+            domain: 'http://q6bk6yo6q.bkt.clouddn.com',
+          })
+      })
+    })
   },
   ViewImage(e) {
     wx.previewImage({
