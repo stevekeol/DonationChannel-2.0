@@ -1,5 +1,8 @@
 App({
-  globalData: {},
+  globalData: {
+    isAuth: '123',
+    userInfo: null
+  },
   globalConf: {
     StatusBar: null,
     Custom: null,
@@ -24,5 +27,6 @@ App({
   },
   onLaunch: function() {
     this.setStatusBar();
+    
   }
 })

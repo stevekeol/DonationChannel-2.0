@@ -1,9 +1,9 @@
 <cu-custom bgColor="bg-blue">
-  <view slot="content">JieGe</view>
+  <view slot="content">{{userInfo.nickName ? userInfo.nickName : '未登录用户'}}</view>
 </cu-custom>
 
 <view class="backgroundHead">
-  <image class="avatar" src="https://shp.qpic.cn/cfwebcap/0/d0a02c5f86d40c0fae24ae56eea587e0/" mode="scaleToFill"></image>
+  <image class="avatar" src="{{userInfo.avatarUrl ? userInfo.avatarUrl: 'https://plague.oss-cn-shenzhen.aliyuncs.com/default_head.jpg'}}" mode="scaleToFill"></image>
 </view>
 
 <view class="body margin-top-xl">

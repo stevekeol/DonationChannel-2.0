@@ -1,5 +1,5 @@
-<cu-custom bgColor="bg-blue" isBack="{{true}}">
-  <view slot="content">分享</view>
+<cu-custom class="main-bg-color" isBack="{{true}}">
+  <view slot="content">求助海报</view>
   <view slot="backText">返回</view>  
 </cu-custom>
 

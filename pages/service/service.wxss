@@ -1,3 +1,7 @@
+.cu-custom .cu-bar {
+  background: linear-gradient(180deg, #e64d42, #e55647);
+  color: #ffffff
+}
 .service-container {
   height: 100%;
   width: 750rpx;
@@ -7,15 +11,48 @@
   padding-top: 100rpx;
   position: relative;
 }
-
+.service-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 750rpx;
+  background: rgba(0,0,0,.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-title {
+  font-size: 32rpx;
+  margin: 20rpx 0;
+  color: #888888
+}
+.contact-content {
+  font-size: 36rpx;
+  color: #e64d42;
+}
+.mask-content-wrapper {
+  margin-top: 300rpx;
+  width: 650rpx;
+  height: 550rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.qcode-image {
+  width: 240rpx;
+  height: 240rpx;
+}
 .service-background{
   position: fixed;
   top: 0;
   height: 100%;
   width: 750rpx;
-  background: linear-gradient(180deg, #0081ff, #1cbbb4);
+  background: linear-gradient(180deg, #e64d42, #f69469);
   z-index: 1;
-
 }
 .servie-item-wrapper {
   z-index: 10;
@@ -25,7 +62,10 @@
   margin-bottom: 50rpx;
   display: flex;
   box-shadow: 0 15rpx 20rpx rgba(0,0,0,.2);
-  background: #ffffff
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .service-icon-box {
   width: 260rpx;
@@ -34,7 +74,10 @@
   justify-content: center;
   align-items: center;
 }
-
+.servie-item-image {
+  width: 300rpx;
+  height: 100rpx;
+}
 .service-icon {
   width: 100rpx;
   height: 100rpx;
