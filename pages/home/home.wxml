@@ -1,4 +1,11 @@
 <view class="demandsMap">
+  <view class="home-mask" wx:if="{{isShowMask}}">
+    <image src="/images/logo.jpeg" mode="aspecFill" class="mask-logo-img"></image>
+    <view class="auth-box">
+      <button open-type="getUserInfo" class="auth-button" bindgetuserinfo="zmGetUserInfo">用户授权</button>
+      <view class="auth-close-button" bindtap="closeMask">暂不授权</view>
+    </view>
+  </view>
   <map id="myMap" class="map"
      markers="{{markers}}"
      style="width:100%;height:100vh;"

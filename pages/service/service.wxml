@@ -1,15 +1,29 @@
-<cu-custom bgColor="bg-blue">
-  <view slot="content">服务</view>
+<cu-custom>
+  <view slot="content">公益导航</view>
 </cu-custom>
 <view class="service-container">
   <view class="service-background"></view>
+  <view class="service-mask" catchtouchmove="preventTouchMove" bindtap="closeMask" wx:if="{{isShowMask}}">
+    <view class="mask-content-wrapper">
+    <image src="{{qcode}}" mode="aspecFill" class="qcode-image"></image>
+    <view class="contact-title">联系方式:</view>
+    <view class="contact-content">{{contact}}</view>
+    </view>
+  </view>
   <view wx:for="{{serviceList}}" wx:key="index" class="servie-item-wrapper">
+    <!--
+    第一版 icon + 文字
     <view class="service-icon-box">
       <image mode="aspecFill" src="{{'/images/services/icon-item-' + index + '.svg'}}" class="service-icon"></image>
     </view>
     <view class="service-text-box">
       <view class="servie-title">{{item.title}}</view>
       <view class="service-desc">{{item.desc}}</view>
+    </view> 
+    -->
+    <view class="servie-item-image-wrapper" bindtap="showMask" data-qcode="{{item.qcode}}" data-contact="{{item.contact}}">
+    <!-- 第二版 使用图片展示 -->
+      <image src="{{item.iconUrl}}" mode="aspecFill" class="servie-item-image"></image>
     </view>
   </view>
 </view>

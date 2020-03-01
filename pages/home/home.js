@@ -59,7 +59,9 @@ Page({
       '除颤仪': 1
     },
     hospitals: mockData.hospitals,
-    personalDatas: personnalData
+    personalDatas: personnalData,
+    // 是否显示遮罩
+    isShowMask: false
   },
   //地图缩放/平移时
   regionchange(e) {
@@ -87,10 +89,29 @@ Page({
     })
   },
   onLoad() {
+    let _this = this
     // 实例化API核心类
     mapSDK = new QQMapWX({
       key: 'LTSBZ-2Y7CP-VWLDA-VWFX5-DZ4TK-35FEW'
     });
+
+    // 检测用户授权情况
+    wx.getSetting({
+      success(res) {
+        let app = getApp();
+        app.globalData.isAuth = res.authSetting['scope.userInfo'] ? true : false
+        _this.setData({
+          isShowMask: res.authSetting['scope.userInfo'] ? false : true
+        })
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success(res) {
+              app.globalData.userInfo = res.userInfo
+            }
+          })
+        }
+      }
+    })
   },
   //应当为获取数据后再执行这里
   onShow: function() {
@@ -109,6 +130,22 @@ Page({
     let param = `?name=${info.name}&phone=${info.contact}&addr=${info.community}&time=${info.timeOfIllness}&desc=${info.desc}`
     wx.navigateTo({
       url: '/pages/share/share' + param,
+    })
+  },
+  /**
+   * 获取用户信息
+   */
+  zmGetUserInfo: function(e) {
+    let app = getApp();
+    app.globalData.isAuth = true;
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      isShowMask: false
+    })
+  },
+  closeMask: function(e) {
+    this.setData({
+      isShowMask: false
     })
   }
 })

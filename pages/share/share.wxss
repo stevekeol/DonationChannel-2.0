@@ -12,7 +12,7 @@ page {
   align-items: center;
   flex: 1;
   width: 750upx;
-  background: #eeeeee;
+  background: #f1f1f1;
 }
 .image-wraper {
   width: 750rpx;
@@ -24,6 +24,7 @@ page {
 .share-image {
   width: 640rpx;
   height: 1008rpx;
+  border-radius: 30rpx;
 }
 .button-wraper {
   display: flex;
@@ -34,4 +35,9 @@ page {
 }
 button {
   width: 300rpx;
+}
+.main-bg-color {
+  background-color: #e64d42;
+  color: #ffffff
+
 }
