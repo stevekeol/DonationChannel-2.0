@@ -1,0 +1,37 @@
+/* pages/share/share.wxss */
+page {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  flex: 1
+}
+.share-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  width: 750upx;
+  background: #eeeeee;
+}
+.image-wraper {
+  width: 750rpx;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.share-image {
+  width: 640rpx;
+  height: 1008rpx;
+}
+.button-wraper {
+  display: flex;
+  width: 750rpx;
+  height: 160rpx;
+  justify-content: center;
+  align-items: center
+}
+button {
+  width: 300rpx;
+}

@@ -66,6 +66,7 @@ Page({
     console.log(e.type)
   },
   markertap(e) {
+    console.log('markertap--', e)
     console.log(this.data.mapLevelIsLeft);
     if(this.data.mapLevelIsLeft) {
       console.log('enter hos');
@@ -93,7 +94,6 @@ Page({
   },
   //应当为获取数据后再执行这里
   onShow: function() {
-    
     //异步获取hospitals和personals,然后
     this.setData({
       markers: hospital2marker(mockData.hospitals),
@@ -104,6 +104,11 @@ Page({
     })
   },
   genPoster: function() {
-    console.log('此时生成可本地保存的海报');
+    console.log(this.data.currentPersonal)
+    let info = this.data.currentPersonal
+    let param = `?name=${info.name}&phone=${info.contact}&addr=${info.community}&time=${info.timeOfIllness}&desc=${info.desc}`
+    wx.navigateTo({
+      url: '/pages/share/share' + param,
+    })
   }
 })
