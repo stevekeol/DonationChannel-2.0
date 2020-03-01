@@ -2,3 +2,17 @@
   <view slot="content">求助信息列表</view>
   <view slot="backText">返回</view>  
 </cu-custom>
+
+<view class="checkout-container">
+  <view class="help-contents-wrapper">
+    <view wx:for="{{helpList}}" wx:key="index" class="help-item" data-id="{{item.id}}" bindtap="toDetail">
+      <view class="level-text normal" wx:if="{{item.level==0}}">普通</view>
+      <view class="level-text urgent" wx:elif="{{item.level==1}}">急</view>
+      <view class="level-text urgent-pro" wx:else>加急</view>
+      <text class="help-name">{{item.name}}</text>
+      <text class="help-addr">{{item.address ? item.address : '暂无地址'}}</text>
+      <text class="help-time">{{item.timeOfIllness? item.timeOfIllness : '暂无发病时间'}}</text>
+      <text class="help-desc">{{item.desc && item.desc!=" " ? item.desc : '暂无描述'}}</text>
+    </view>
+  </view>
+</view>
