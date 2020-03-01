@@ -1,1 +1,66 @@
 @import "../../colorui/main.wxss";
+
+.checkout-container {
+  width: 750rpx;
+  height: 100%;
+  background-color: #f1f1f1;
+}
+
+.help-contents-wrapper {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.help-item {
+  width: 700rpx;
+  height: 280rpx;
+  padding: 30rpx 40rpx;
+  background-color: #FFFFFF;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20rpx;
+  box-shadow: 0 15rpx 20rpx rgba(0,0,0,.2);
+  position: relative
+}
+
+.help-item:last-child {
+  margin-bottom: 30rpx;
+}
+
+.help-name {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.help-addr {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.help-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #f28762
+}
+.level-text {
+  position: absolute;
+  top: 20rpx;
+  right:20rpx;
+  font-weight: 700
+}
+.normal {
+  color: #3a96ff
+}
+.urgent {
+  color: #fe8e46
+}
+.urgent-pro {
+  color: #fa2800
+}
