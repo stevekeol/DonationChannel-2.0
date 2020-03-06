@@ -415,7 +415,7 @@
   padding-top: 5rpx;
   border-top: solid 1rpx rgba(0, 0, 0, 0.3);
 }
-.entranceBtn{
+/*.entranceBtn{
   width: 100%;
   height: 80rpx;
   display: flex;
@@ -425,10 +425,38 @@
   width: 80rpx;
   height: 80rpx;
   border-radius: 40rpx;
-    -webkit-animation-name: scaleDraw; /*关键帧名称*/
-    -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
-    -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
-    -webkit-animation-duration: 5s; /*动画所花费的时间*/  
+    -webkit-animation-name: scaleDraw; 
+    -webkit-animation-timing-function: ease-in-out; 
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 5s; 
+}*/
+.entranceBtn {
+
+}
+.btnTag {
+    /*学习*/
+    display: inline-flex;
+    justify-content: center;
+    position: absolute;
+
+    width: 140rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 0 25rpx 25rpx 0;
+    /*top: -50rpx;*/
+    left: 0rpx;
+    font-size: 28rpx;
+    color: white;
+    background-color: #e54d42;
+}
+.help {
+  top: -80rpx;
+}
+.poster {
+  top: -180rpx;
+}
+.search {
+  top: -280rpx;
 }
 @keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
     0%{

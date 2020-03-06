@@ -30,7 +30,7 @@ export function wxGetUserInfo() {
           wx.getUserInfo({
             success: res => {
               console.log('ok');
-              console.log(res);
+              // console.log(res);
               resolve(res);
             }
           })
@@ -68,7 +68,7 @@ export function wxGetSystemInfoSync() {
   return new Promise((resolve, reject) => {
     try {
       const res = wx.getSystemInfoSync();
-      console.log(res);
+      // console.log(res);
 
       let statusBarData = {};
       statusBarData.StatusBar = res.statusBarHeight;

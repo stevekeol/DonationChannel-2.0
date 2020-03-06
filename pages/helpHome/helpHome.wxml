@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="content">求助主页</view>
+  <view slot="backText">返回</view>  
+</cu-custom>
+<view class="body">
+  <view class="location cuIcon-locationfill">{{ helpInfo.address }}</view>
+  <view class="tableContainer">
+    <view class="item">
+      <view class="name">姓名</view>
+      <view>{{ helpInfo.name }}</view>
+    </view>
+    <view class="item">
+      <view class="name">电话</view>
+      <view>{{ helpInfo.phone ? helpInfo.phone: '暂无'}}</view>
+    </view>
+  </view>
+  <navigator class="tableContainer" url="../../pages/helpKey/helpKey" open-type="navigate">
+    <view class="item">
+      <view class="name">求助关键词</view>
+      <view>{{ helpInfo.key ? helpInfo.key : '暂无'}}</view>
+    </view>
+  </navigator>
+  <view class="tableContainer">
+    <view class="item">
+      <view class="name">年龄</view>
+      <view>{{ helpInfo.age ? helpInfo.age: '暂无'}}</view>
+    </view>    
+    <view class="item">
+      <view class="name">发病日期</view>
+      <view>{{ helpInfo.timeOfIllness ? helpInfo.timeOfIllness : '暂无'}}</view>
+    </view>
+  </view>
+  <view class="desc">【详情描述】: {{helpInfo.desc}}</view>
+  <view class="cu-bar bg-white margin-top margin-bottom">
+    <view class="action">
+      相关证照
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="grid col-2 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{helpInfo.imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{helpInfo.imgList[index]}}">
+        <image src='{{helpInfo.imgList[index]}}' mode='aspectFill'></image>
+      </view>
+     </view>
+  </view>  
+</view>

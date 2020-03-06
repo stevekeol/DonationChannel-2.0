@@ -1,28 +1,23 @@
+import { apiGetCheckout } from '../../utils/api.js';
 const app = getApp();
 Page({
   data: {
     helpList:[]
   },
   onLoad(options) {
-    this.getHelpList()
-  },
-  /**
-   * 获取求助信息列表
-   */
-  getHelpList: function() {
-    wx.request({
-      url: 'https://ncp.xuedaojia.net/checkout',
-      method: 'GET',
-      success: res => {
-        console.log(res.data.result)
+    // this.getHelpList()
+    apiGetCheckout()
+      .then((res) => {
         this.setData({
-          helpList:res.data.result
+          helpList:res.result
         })
-      }
-    })
+      })
   },
   toDetail: function(e) {
     console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: `../helpHome/helpHome?id=${e.currentTarget.dataset.id}`
+    })
   }
 })
 

@@ -106,6 +106,7 @@ Page({
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success(res) {
+              // console.log(res);
               app.globalData.userInfo = res.userInfo
             }
           })

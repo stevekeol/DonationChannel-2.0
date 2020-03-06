@@ -1,5 +1,5 @@
 <cu-custom bgColor="bg-red" isBack="{{true}}">
-  <view slot="content">求助信息列表</view>
+  <view slot="content">待审核列表</view>
   <view slot="backText">返回</view>  
 </cu-custom>
 
@@ -10,6 +10,7 @@
       <view class="level-text urgent" wx:elif="{{item.level==1}}">急</view>
       <view class="level-text urgent-pro" wx:else>加急</view>
       <text class="help-name">{{item.name}}</text>
+      <text wx:if="{{item.key}}" class="help-key">{{iitem.key}}</text>
       <text class="help-addr">{{item.address ? item.address : '暂无地址'}}</text>
       <text class="help-time">{{item.timeOfIllness? item.timeOfIllness : '暂无发病时间'}}</text>
       <text class="help-desc">{{item.desc && item.desc!=" " ? item.desc : '暂无描述'}}</text>

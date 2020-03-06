@@ -5,12 +5,7 @@
 <view class="body">
   <view class="title">快速选择求助关键词</view>
   <view class="keyContainer">
-    <view class="item">血浆...</view>
-    <view class="item">病床...</view>
-    <view class="item">宠物...</view>
-    <view class="item">...</view>
-    <view class="item">...</view>
-    <view class="item">...</view>
+    <view class="item {{resKey[index] ? 'choosed' : 'normal'}}" wx:for="{{ keys }}" bindtap="chooseKey" data-index='{{ index }}'>{{ keys[index] }}</view>
   </view>
   <view class="button-lg" bindtap="saveHelpKey">保存</view>
 </view>

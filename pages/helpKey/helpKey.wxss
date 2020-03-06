@@ -11,8 +11,17 @@
 }
 .keyContainer .item {
     height: 120rpx;
-    background-color: white;
+    line-height: 120rpx;
     border-radius: 12rpx;
+    text-align: center;
+}
+.keyContainer .normal {
+    background-color: grey;
+    color: white;
+}
+.keyContainer .choosed {
+    background-color: #e54d42;
+    color: white;
 }
 .title {
     color: grey;

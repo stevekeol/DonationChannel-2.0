@@ -4,38 +4,38 @@
 </cu-custom>
 
 <view class="body">
-  <view class="location cuIcon-locationfill" bindtap="showLocation">杭州市西湖区浙江大学紫金港校区紫云三舍</view>
+  <view class="location cuIcon-locationfill" bindtap="getAddress&Location">{{ address ? address : '点击此处选择您的位置' }}</view>
   <view class="tableContainer">
     <view class="item">
       <view class="name">姓名</view>
-      <view>王大叔</view>
+      <input placeholder="此处输入" bindchange="getName"></input>
     </view>
     <view class="item">
       <view class="name">电话</view>
-      <view>15258800907</view>
+      <input placeholder="此处输入" bindchange="getPhone" type="number" maxlength="11"></input>
     </view>
   </view>
   <navigator class="tableContainer" url="../../pages/helpKey/helpKey" open-type="navigate">
     <view class="item">
       <view class="name">求助关键词</view>
-      <view class="cuIcon-right">血浆</view>
+      <view class="cuIcon-right">{{key ? key : '请选择'}}</view>
     </view>
   </navigator>
   <view class="tableContainer">
     <view class="item">
       <view class="name">年龄</view>
-      <view class="cuIcon-right">53</view>
+      <input placeholder="此处输入" bindchange="getAge" type="number" maxlength="3"></input>
     </view>    
     <view class="item">
       <view class="name">发病日期</view>
-      <view class="cuIcon-right">2020-01-21</view>
+      <input placeholder="如: 2020-01-20" bindchange="getIllDay"></input>
     </view>
   </view>
 
   <navigator class="tableContainer" url="../../pages/helpDesc/helpDesc" open-type="navigate">
     <view class="item">
       <view class="name">详情描述</view>
-      <view class="cuIcon-right"></view>
+      <view class="cuIcon-right">{{desc}}</view>
     </view>
   </navigator>
   <view class="cu-bar bg-white margin-top">
@@ -60,5 +60,5 @@
 
 <view class="submitContainer">
   <view class="money">求助信息将展示给附近专业人士</view>
-  <view class="submitBtn bg-red">立即发布</view>
+  <view class="submitBtn bg-red" bindtap="submit">立即发布</view>
 </view>

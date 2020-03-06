@@ -58,12 +58,15 @@
 
   <view class="infoLayer_2" wx:if="{{!mapLevelIsLeft}}">
     <view class="entranceBtn">
-      <navigator class="btn left" url="../../pages/publishDemand/publishDemand" hover-class="none">
+<!--       <navigator class="btn left" url="../../pages/publishDemand/publishDemand" hover-class="none">
         <image class="img" src="../../images/map/publishBtn.png" mode="top"></image>
       </navigator>
       <view class="btn right" bindtap="genPoster">
         <image class="img" src="../../images/map/shareBtn.png" mode="top"></image>
-      </view>
+      </view> -->
+      <navigator url="../../pages/publishDemand/publishDemand" hover-class="none" class="btnTag help">我要求助</navigator>
+      <view class="btnTag poster" bindtap="genPoster">海报接力</view>
+      <navigator url="../../pages/searchHelp/searchHelp" hover-class="none" class="btnTag search">搜索查询</navigator>
     </view>
     <view class="helpInfo">
       <view class="title">紧急求助</view>

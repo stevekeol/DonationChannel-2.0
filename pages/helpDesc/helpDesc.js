@@ -7,15 +7,17 @@ Page({
     })
   },
   saveHelpInfo() {
-    console.log(this.data.value);
     let pages = getCurrentPages();
     let prePage = pages[pages.length - 2];
+    console.log(prePage.data);
+    let test = this.data.value;
     prePage.setData({
-      desc: this.data.value
+      desc: 'test123'
+    }, () => {
+      console.log(prePage.data);
     })
     wx.redirectTo({
       url: "../../pages/publishDemand/publishDemand"
     })
   }
 })
-

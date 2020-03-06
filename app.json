@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/helpHome/helpHome",
     "pages/publishDemand/publishDemand",
     "pages/service/service",
     "pages/me/me",
@@ -8,7 +9,8 @@
     "pages/myHelp/myHelp",
     "pages/helpDesc/helpDesc",
     "pages/helpKey/helpKey",
-    "pages/checkout/checkout"
+    "pages/checkout/checkout",
+    "pages/searchHelp/searchHelp"
   ],
   "window": {
     "navigationStyle": "custom",

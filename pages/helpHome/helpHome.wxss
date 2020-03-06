@@ -17,10 +17,12 @@
 }
 .tableContainer {
     background-color: white;
-    border-radius: 20rpx;
     width: 100%;
     padding: 0 30rpx 0 30rpx;
     margin-bottom: 30rpx;
+}
+.grid {
+    padding-top: 20rpx;
 }
 
 /*好好学习*/
@@ -39,6 +41,14 @@
     opacity: 0.8;
 }
 
+.desc {
+    background-color: white;
+    width: 100%;
+    padding: 20rpx 30rpx 20rpx 30rpx;
+    margin-bottom: 30rpx;
+    /*opacity: 0.8;*/
+
+}
 .tableContainer .item input {
     height: 120rpx;
     line-height: 120rpx;
@@ -65,7 +75,6 @@
     width: 300rpx;
     height: 80rpx;
     line-height: 80rpx;
-    border-radius: 40rpx;
     /*background-color: linear-gradient(45deg, #0081ff, #1cbbb4);*/
     align-self: center;
     text-align: center;
