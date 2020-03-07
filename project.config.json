@@ -59,6 +59,13 @@
 					"id": -1,
 					"name": "服务页",
 					"pathName": "pages/service/service",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/searchHelp/searchHelp",
 					"scene": null
 				}
 			]
