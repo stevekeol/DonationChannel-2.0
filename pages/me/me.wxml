@@ -56,6 +56,12 @@
       </view>
       <view class="cuIcon-right"></view>
     </view>
+    <view class="item" hover-class="none">
+      <view class="name cuIcon-form">
+      <button class="cu-btn" hover-class="none" open-type="feedback">意见反馈</button>
+    </view>
+    <view class="cuIcon-right"></view>
+  </view>
   </view>
   <view class="title margin-top-xl">审核入口</view>
   <view class="tableContainer margin-top">
