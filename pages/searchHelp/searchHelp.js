@@ -1,8 +1,13 @@
 // import { apiGetEmployees, apiGetClients } from '../../utils/api.js';
+import {
+  apiGetAllHelps
+} from '../../utils/api.js';
 const app = getApp();
 Page({
   data: {
-    serviceList:[  // type 有web、mini 
+    helpList: [],
+    searchList: [],
+    serviceList: [ // type 有web、mini 
       {
         title: '同程疫情地图',
         desc: '测试测试测试测试测试测试测试测试测',
@@ -52,9 +57,38 @@ Page({
         type: 'mini',
         url: '',
       },
-      
+
     ]
   },
-  onLoad() {}
+  onLoad(options) {
+    apiGetAllHelps()
+      .then((res) => {
+        console.log(res)
+        this.setData({
+          helpList: res.result
+        })
+      })
+  },
+  /**
+   * 搜索现有的结果
+   */
+  searchHelps(e) {
+    let keyWord = e.detail.value;
+    let reChinese = /[\u4e00-\u9fa5]/g
+    if (reChinese.test(keyWord)) {
+      let cleanKeyWord = keyWord.match(reChinese).join("")
+      if (cleanKeyWord != '') {
+        let searchList = this.data.helpList.filter((item)=> {
+          return item.name.match(cleanKeyWord) != null
+        })
+        this.setData({
+          searchList
+        })
+      }
+    }else{
+      this.setData({
+        searchList: []
+      })
+    }
+  }
 })
-
