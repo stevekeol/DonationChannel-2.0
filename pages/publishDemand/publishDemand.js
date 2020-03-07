@@ -1,6 +1,8 @@
 import { apiGetUpToken } from '../../utils/api.js';
 const qiniuUploader = require("../../utils/qiniuUploader");
+const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 const app = getApp();
+let mapSDK;
 Page({
   data: {
     openid: '',
@@ -15,12 +17,44 @@ Page({
     imgList: []
   },
   onLoad() {
+    // 实例化API核心类
+    mapSDK = new QQMapWX({
+      key: 'LTSBZ-2Y7CP-VWLDA-VWFX5-DZ4TK-35FEW'
+    });
     this.setData({
       openid: app.globalData.openid
     })
   },
   onShow() {
-    // console.log(this.data);
+    // console.log(params);
+    console.log(this.data);
+  },
+  getAddressAndLocation() {
+    let _this = this;
+    mapSDK.reverseGeocoder({
+      success: function(res) {
+        console.log(res.result.location);
+        _this.setData({
+          address: `${res.result.address}${res.result.address_reference.landmark_l2.title}`,
+          location: [res.result.location.lng, res.result.location.lat]
+        })
+      },
+      fail: function(error) {
+        //用户尚未位置授权时的处理（此处确实需要吗?）
+        wx.getSetting({
+          success(res) {
+            if (!res.authSetting['scope.userLocation']) {
+              wx.authorize({
+                scope: 'scope.userLocation',
+                success () {
+                  //
+                }
+              })
+            }
+          }
+        })        
+      }
+    }) 
   },
   submit() {
     console.log(this.data);
