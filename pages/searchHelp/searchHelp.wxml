@@ -2,3 +2,25 @@
   <view slot="content">搜索求助关键词</view>
   <view slot="backText">返回</view>  
 </cu-custom>
+<view class="search-container">
+  <view class="search-header">
+    <view class="search-box">
+      <image mode="aspectFill" src="/images/search.svg" class="search-icon"></image>
+      <input  class="search-input" bindinput="searchHelps"/>
+    </view>
+  </view>
+  <view class="search-body">
+    <view class="search-item" wx:for="{{searchList}}">
+      <view class="search-item-top">
+        <view>{{item.name}}</view>
+        <view class="sub-box">
+          <image src="/images/sub.svg" class="sub-icon" mode="aspectFill"/>
+          <text>订阅</text>
+        </view>
+      </view>
+      <view class="search-item-bottom">
+        <text class="search-item-desc">{{item.desc == "" || item.desc==null ? '暂无描述' : item.desc }}</text>
+      </view>
+    </view>
+  </view>
+</view>

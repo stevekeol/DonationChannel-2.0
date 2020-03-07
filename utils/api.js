@@ -107,6 +107,14 @@ export function apiGetUpToken() {
   })
 }
 
+// 获取所有需要帮助的用户
+export function apiGetAllHelps() {
+  return request({
+    url: `${baseUrl}/allHelps`,
+    method: 'GET',
+  })
+}
+
 
 /*********以下暂未使用********/
 export function apiGetDecodedUserInfo(encryptedUserInfo) {
