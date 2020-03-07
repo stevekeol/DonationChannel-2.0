@@ -18,5 +18,12 @@ Page({
     } else {
       console.log('未验证')
     }
-  }  
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '有更多的人，需要你们的帮助！',
+      path: '/pages/home/home',
+      imageUrl: 'https://wechat-miniprogram-cdn.oss-cn-shanghai.aliyuncs.com/share-world-map.png',
+    }
+  }
 })

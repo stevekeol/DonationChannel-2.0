@@ -2,7 +2,7 @@
   ColorUi for MP-weixin  v2.1.4 | by 文晓港 2019年4月25日19:15:42
   仅供学习交流，如作它用所承受的法律责任一概与作者无关
   使用ColorUi开发扩展与插件时，请注明基于ColorUi开发
-  
+
   （QQ交流群：240787041）
 */
 
@@ -685,7 +685,7 @@ radio.white[checked] .wx-radio-input {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0 30rpx;
+    padding: 0 15rpx;
     font-size: 28rpx;
     height: 64rpx;
     line-height: 1;
@@ -702,7 +702,7 @@ radio.white[checked] .wx-radio-input {
 }
 
 .cu-btn:not([class*="bg-"]) {
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
 .cu-btn[class*="line"] {
@@ -2623,7 +2623,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 
 .card-swiper swiper-item {
     width: 610rpx !important;
-    right: 120rpx; 
+    right: 120rpx;
     box-sizing: border-box;
     padding: 10rpx 0rpx 100rpx;
     overflow: initial;
