@@ -157,13 +157,13 @@ page {
 .search-item-bottom {
   width: 100%;
   height: 80rpx;
-  overflow: hidden;
   padding: 0 20rpx;
   font-size: 26rpx;
-
+  align-items: center;
 }
 .search-item-desc {
-  padding: 10rpx 0;
+  height: 70rpx;
+  overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
