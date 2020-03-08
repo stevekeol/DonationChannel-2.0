@@ -9,15 +9,12 @@ Page({
   saveHelpInfo() {
     let pages = getCurrentPages();
     let prePage = pages[pages.length - 2];
-    console.log(prePage.data);
-    let test = this.data.value;
     prePage.setData({
-      desc: 'test123'
-    }, () => {
-      console.log(prePage.data);
-    })
-    wx.redirectTo({
-      url: "../../pages/publishDemand/publishDemand"
+      desc: this.data.value
+    });
+    prePage.changeData();
+    wx.navigateBack({
+      delta: 1
     })
   }
 })

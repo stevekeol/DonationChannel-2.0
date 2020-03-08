@@ -17,6 +17,7 @@ export function hospital2marker(hospitals) {
 
 //个人求助信息 -> 地图标记
 export function personal2marker(personals) {
+  console.log(personals[0]);
   let markers = [];
   personals.map((item) => {
     let marker = {
@@ -24,8 +25,8 @@ export function personal2marker(personals) {
       width: 30,
       height: 30,
       id: parseInt(item.id),
-      longitude: parseFloat(item.latitude).toFixed(5)-0,
-      latitude: parseFloat(item.longitude).toFixed(5)-0      
+      longitude: parseFloat(item.location[1]).toFixed(5)-0,
+      latitude: parseFloat(item.location[0]).toFixed(5)-0      
     }
     markers.push(marker);
   })

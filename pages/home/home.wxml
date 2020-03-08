@@ -80,13 +80,13 @@
           </view>
         </view>
         <view class="nameContainer">
-          <view class="name">电话: {{currentPersonal.contact }}</view>
+          <view class="name">电话: {{currentPersonal.phone }}</view>
         </view>  
         <view class="nameContainer">
           <view class="name">求助时间: {{currentPersonal.timeOfIllness }}</view>
         </view>                                 
         <view class="nameContainer">
-          <view class="name">地址: {{currentPersonal.community}}</view>
+          <view class="name">地址: {{currentPersonal.address}}</view>
         </view>
         <view class="desc">情况描述： {{currentPersonal.desc}} 
         </view>        

@@ -1,4 +1,4 @@
-import { apiGetUpToken } from '../../utils/api.js';
+import { apiGetUpToken, apiPostUserHelp } from '../../utils/api.js';
 const qiniuUploader = require("../../utils/qiniuUploader");
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 const app = getApp();
@@ -25,10 +25,6 @@ Page({
       openid: app.globalData.openid
     })
   },
-  onShow() {
-    // console.log(params);
-    console.log(this.data);
-  },
   getAddressAndLocation() {
     let _this = this;
     mapSDK.reverseGeocoder({
@@ -36,7 +32,7 @@ Page({
         console.log(res.result.location);
         _this.setData({
           address: `${res.result.address}${res.result.address_reference.landmark_l2.title}`,
-          location: [res.result.location.lng, res.result.location.lat]
+          location: [res.result.location.lat, res.result.location.lng]
         })
       },
       fail: function(error) {
@@ -52,12 +48,26 @@ Page({
               })
             }
           }
-        })        
+        })
       }
     }) 
   },
   submit() {
     console.log(this.data);
+    apiPostUserHelp(this.data)
+      .then((res) => {
+        console.log(res);
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 2000
+        })
+      })
+  },
+  //作用: 子页面中设置父页面后，保留父页面的原始数据
+  changeData() {
+    let _this = this;
+    _this.onLoad();
   },
   getName(e) {
     this.setData({
@@ -67,7 +77,7 @@ Page({
   getPhone(e) {
     this.setData({
       phone: e.detail.value
-    })
+    }, ()=> console.log(this.data))
   },
   getAge(e) {
     this.setData({

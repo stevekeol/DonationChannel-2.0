@@ -35,7 +35,7 @@
   <navigator class="tableContainer" url="../../pages/helpDesc/helpDesc" open-type="navigate">
     <view class="item">
       <view class="name">详情描述</view>
-      <view class="cuIcon-right">{{desc}}</view>
+      <view class="cuIcon-right desc">{{desc}}</view>
     </view>
   </navigator>
   <view class="cu-bar bg-white margin-top">
@@ -56,9 +56,5 @@
       </view>
     </view>
   </view>
-</view>
-
-<view class="submitContainer">
-  <view class="money">求助信息将展示给附近专业人士</view>
-  <view class="submitBtn bg-red" bindtap="submit">立即发布</view>
+  <view class="button-lg" bindtap="submit">立即发布</view>  
 </view>

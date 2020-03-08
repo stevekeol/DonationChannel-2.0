@@ -1,6 +1,6 @@
 App({
   globalData: {
-    isAuth: '123',
+    isAuth: false,
     userInfo: null,
     openid: null
   },

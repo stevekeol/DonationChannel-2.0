@@ -31,7 +31,8 @@
 .body {
     width: 90%;
     margin-left: 5%;
-    margin-bottom: 20rpx;
+    margin-bottom: 30rpx;
+    padding-bottom: 30rpx;
 }
 .title {
     font-weight: bold;

@@ -24,14 +24,14 @@
     </navigator>
   <view class="title margin-top-xl">其它</view>
   <view class="tableContainer margin-top">
-    <view class="item">
+<!--     <view class="item">
       <view class="name cuIcon-locationfill">我的地址</view>
       <view class="value">余杭区荆长大道西园3幢302</view>
     </view>
     <view class="item">
       <view class="name cuIcon-mobilefill">联系方式</view>
       <view class="value">15258800906</view>
-    </view>
+    </view> -->
     <navigator url="../../pages/myHelp/myHelp" class="item" hover-class="none">
       <view class="name cuIcon-timefill">
         求助历史
@@ -39,7 +39,7 @@
       <view class="cuIcon-right"></view>
     </navigator>
     <navigator url="../../pages/myCare/myCare" class="item" hover-class="none">
-      <view class="name cuIcon-timefill">
+      <view class="name cuIcon-likefill">
         持续关注
       </view>
       <view class="cuIcon-right"></view>

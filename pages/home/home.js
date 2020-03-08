@@ -1,6 +1,6 @@
-// import { apiGetEmployees, apiGetClients } from '../../utils/api.js';
+import { apiGetAllHelps, apiPostWechatInfo } from '../../utils/api.js';
 const mockData = require('../../utils/mockData.js').default;
-const personnalData = require('../../utils/personnalData.js').default;
+// const personnalData = require('../../utils/personnalData.js').default;
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 import { hospital2marker, personal2marker } from 'utils.js';
 
@@ -20,7 +20,7 @@ Page({
       latitude: mockData.initialLocation.latitude
     },
     currentHospital: null,
-    currentPersonal: null,
+    currentPersonal: {},
     //记得对象转数组
     totalDemands: {
       '12导心电图机': 1,
@@ -59,7 +59,7 @@ Page({
       '除颤仪': 1
     },
     hospitals: mockData.hospitals,
-    personalDatas: personnalData,
+    personalDatas: [],
     // 是否显示遮罩
     isShowMask: false,
     isShowBullet: true,
@@ -131,33 +131,8 @@ Page({
     }],
     dmData: []
   },
-  //地图缩放/平移时
-  regionchange(e) {
-    console.log(e.type)
-  },
-  markertap(e) {
-    console.log('markertap--', e)
-    console.log(this.data.mapLevelIsLeft);
-    if(this.data.mapLevelIsLeft) {
-      console.log('enter hos');
-      this.setData({
-        currentHospital: this.data.hospitals.find((hospital) => e.detail.markerId == hospital.id)
-      })
-    } else {
-      console.log('enter pers');
-      this.setData({
-        currentPersonal: this.data.personalDatas.find((personal) => e.detail.markerId == personal.id)
-      })      
-    }
-  },
-  changeMapContent(){
-    this.setData({
-      markers: !this.data.mapLevelIsLeft ? hospital2marker(mockData.hospitals) : personal2marker(personnalData),
-      mapLevelIsLeft: !this.data.mapLevelIsLeft
-    })
-  },
   onLoad() {
-    let _this = this
+    let _this = this;
     // 实例化API核心类
     mapSDK = new QQMapWX({
       key: 'LTSBZ-2Y7CP-VWLDA-VWFX5-DZ4TK-35FEW'
@@ -182,21 +157,48 @@ Page({
       }
     })
 
+    this.setData({
+      // markers: hospital2marker(mockData.hospitals),
+      currentHospital: mockData.hospitals[0],
+      hospitals: mockData.hospitals,
+    })
+    
     _this.setDM()
   },
   //应当为获取数据后再执行这里
   onShow: function() {
-    //异步获取hospitals和personals,然后
+    let _this = this;
+    apiGetAllHelps()
+      .then((res) => {
+        _this.setData({
+          personalDatas: res.result,
+          currentPersonal: res.result[0],
+          markers: personal2marker(res.result),
+        })
+      })
+  },
+  //地图缩放/平移时
+  regionchange(e) {
+    console.log(e.type)
+  },
+  markertap(e) {
+    if(this.data.mapLevelIsLeft) {
+      this.setData({
+        currentHospital: this.data.hospitals.find((hospital) => e.detail.markerId == hospital.id)
+      })
+    } else {
+      this.setData({
+        currentPersonal: this.data.personalDatas.find((personal) => e.detail.markerId == personal.id)
+      })      
+    }
+  },
+  changeMapContent(){
     this.setData({
-      markers: hospital2marker(mockData.hospitals),
-      currentHospital: mockData.hospitals[0],
-      currentPersonal: personnalData[0],
-      hospitals: mockData.hospitals,
-      personalDatas: personnalData
+      markers: !this.data.mapLevelIsLeft ? hospital2marker(mockData.hospitals) : personal2marker(this.data.personalDatas),
+      mapLevelIsLeft: !this.data.mapLevelIsLeft
     })
   },
   genPoster: function() {
-    console.log(this.data.currentPersonal)
     let info = this.data.currentPersonal
     let param = `?name=${info.name}&phone=${info.contact}&addr=${info.community}&time=${info.timeOfIllness}&desc=${info.desc}`
     wx.navigateTo({
@@ -208,11 +210,28 @@ Page({
    */
   zmGetUserInfo: function(e) {
     let app = getApp();
+    let _this = this;
     app.globalData.isAuth = true;
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      isShowMask: false
+    e.detail.userInfo.openid = app.globalData.openid;
+    app.globalData.userInfo = e.detail.userInfo;
+
+    wx.getLocation({
+     type: 'wgs84',
+     success(res) {
+        app.globalData.userInfo.location = [res.latitude, res.longitude];
+        apiPostWechatInfo(app.globalData.userInfo)
+          .then((res) => {
+            _this.setData({
+              isShowMask: false
+            })
+          })
+     },
+     fail(err) {
+       console.log(err);
+     }
     })
+
+
   },
   /**
    * 关闭遮罩层
